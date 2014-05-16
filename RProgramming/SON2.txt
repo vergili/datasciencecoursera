@@ -1,0 +1,845 @@
+1: a single logical value
+2: a vector of 4 logical values
+
+Selection: 1
+
+| That's not exactly what I'm looking for. Try again.
+
+| Remember our lesson on vector arithmetic? The theme was that R performs many
+| operations on an element-by-element basis. We called these 'vectorized'
+| operations.
+
+1: a vector of 4 logical values
+2: a single logical value
+
+Selection: 1
+
+| You got it!
+
+  |==============                                                            |  19%
+
+| Print the contents of tf now.
+
+> tf
+[1]   0.5 -10.0
+
+| You are doing so well!
+
+  |================                                                          |  22%
+
+| The statement num_vect < 1 is a condition and tf tells us whether each
+| corresponding element of our numeric vector num_vect satisfies this condition.
+
+...
+
+  |==================                                                        |  24%
+
+| The first element of num_vect is 0.5, which is less than 1 and therefore the
+| statement 0.5 < 1 is TRUE. The second element of num_vect is 55, which is greater
+| than 1, so the statement 55 < 1 is FALSE. The same logic applies for the third
+| and forth elements.
+
+...
+
+  |====================                                                      |  27%
+
+| Let's try another. Type num_vect >= 6 without assigning the result to a new
+| variable.
+
+> num_vect >= 6
+[1] FALSE  TRUE FALSE  TRUE
+
+| You are doing so well!
+
+  |======================                                                    |  30%
+
+| This time, we are asking whether each individual element of num_vect is greater
+| than OR equal to 6. Since only 55 and 6 are greater than or equal to 6, the
+| second and forth elements of the result are TRUE and the first and third elements
+| are FALSE.
+
+...
+
+  |========================                                                  |  32%
+
+| The `<` and `>=` symbols in these examples are called 'logical operators'. Other
+| logical operators include `>`, `<=`, `==` for exact equality, and `!=` for
+| inequality.
+
+...
+
+  |==========================                                                |  35%
+
+| If we have two logical expressions, A and B, we can ask whether at least one is
+| TRUE with A | B (logical 'or' a.k.a. 'union') or whether they are both TRUE with
+| A & B (logical 'and' a.k.a. 'intersection'). Lastly, !A is the negation of A and
+| is TRUE when A is FALSE and vice versa.
+
+...
+
+  |============================                                              |  38%
+
+| It's a good idea to spend some time playing around with various combinations of
+| these logical operators until you get comfortable with their use. We'll do a few
+| examples here to get you started.
+
+...
+
+  |==============================                                            |  41%
+
+| Try your best to predict the result of each of the following statements. You can
+| use pencil and paper to work them out if it's helpful. If you get stuck, just
+| guess and you've got a 50% chance of getting the right answer!
+
+...
+
+  |================================                                          |  43%
+
+| (3 > 5) & (4 == 4)
+
+1: TRUE
+2: FALSE
+
+Selection: 2
+
+| Keep up the great work!
+
+  |==================================                                        |  46%
+
+| (TRUE == TRUE) | (TRUE == FALSE)
+
+1: FALSE
+2: TRUE
+
+Selection: 2
+
+| That's correct!
+
+  |====================================                                      |  49%
+
+| ((111 >= 111) | !(TRUE)) & ((4 + 1) == 5)
+
+1: FALSE
+2: TRUE
+
+Selection: 2
+
+| Great job!
+
+  |======================================                                    |  51%
+
+| Don't worry if you found these to be tricky. They're supposed to be. Working with
+| logical statements in R takes practice, but your efforts will be rewarded in
+| future lessons (e.g. subsetting and control structures).
+
+...
+
+  |========================================                                  |  54%
+
+| Character vectors are also very common in R. Double quotes are used to
+| distinguish character objects, as in the following example.
+
+...
+
+  |==========================================                                |  57%
+
+| Create a character vector that contains the following words: "My", "name", "is".
+| Remember to enclose each word in it's own set of double quotes, so that R knows
+| they are character strings. Store the vector in a variable called my_char.
+
+> my_char <- c("My", "name", "is")
+
+| That's correct!
+
+  |============================================                              |  59%
+
+| Print the contents of my_char to see what it looks like.
+
+> my_char
+[1] "My"   "name" "is"  
+
+| That's correct!
+
+  |==============================================                            |  62%
+
+| Right now, my_char is a character vector of length 3. Let's say we want to join
+| the elements of my_char together into one continuous character string (i.e. a
+| character vector of length 1). We can do this using the paste() function.
+
+...
+
+  |================================================                          |  65%
+
+| Type paste(my_char, collapse = " ") now. Make sure there's a space between the
+| double quotes in the `collapse` argument. You'll see why in a second.
+
+> paste(my_char, collapse = " ")
+[1] "My name is"
+
+| You got it right!
+
+  |==================================================                        |  68%
+
+| The `collapse` argument to the paste() function tells R that when we join
+| together the elements of the my_char character vector, we'd like to separate them
+| with single spaces.
+
+...
+
+  |====================================================                      |  70%
+
+| It seems that we're missing something.... Ah, yes! Your name!
+
+...
+
+  |======================================================                    |  73%
+
+| To add (or 'concatenate') your name to the end of my_char, use the c() function
+| like this: c(my_char, "your_name_here"). Place your name in double quotes where
+| I've put "your_name_here". Try it now, storing the result in a new variable
+| called my_name.
+
+> my_name <- c(my_char, "Mehmet")
+
+| You are doing so well!
+
+  |========================================================                  |  76%
+
+| Take a look at the contents of my_name.
+
+> my_name
+[1] "My"     "name"   "is"     "Mehmet"
+
+| You are amazing!
+
+  |==========================================================                |  78%
+
+| Now, use the paste() function once more to join the words in my_name together
+| into a single character string. Don't forget to say collapse = " "!
+
+> paste(my_name, collapse = " ")
+[1] "My name is Mehmet"
+
+| That's a job well done!
+
+  |============================================================              |  81%
+
+| In this example, we used the paste() function to collapse the elements of a
+| single character vector. paste() can also be used to join the elements of
+| multiple character vectors.
+
+...
+
+  |==============================================================            |  84%
+
+| In the simplest case, we can join two character vectors that are each of length 1
+| (i.e. join two words). Try paste("Hello", "world!", sep = " "), where the `sep`
+| argument tells R that we want to separate the joined elements with a single
+| space.
+
+> paste("Hello", "world!", sep = " ")
+[1] "Hello world!"
+
+| You got it!
+
+  |================================================================          |  86%
+
+| For a slightly more complicated example, we can join two vectors, each of length
+| 3. Use paste() to join the integer vector 1:3 with the character vector c("X",
+| "Y", "Z"). This time, use sep = "" to leave no space between the joined elements.
+
+> paste(1:^3, c("X","Y","Z"))
+Error: unexpected '^' in "paste(1:^"
+> paste(1:3, c("X","Y","Z"))
+[1] "1 X" "2 Y" "3 Z"
+
+| That's not the answer I was looking for, but try again. Or, type info() for more
+| options.
+
+| Use paste(1:3, c("X", "Y", "Z"), sep = "") to see what happens when we join two
+| vectors of equal length using paste().
+
+> paste(1:3, c("X", "Y", "Z"), sep = "")
+[1] "1X" "2Y" "3Z"
+
+| Nice work!
+
+  |==================================================================        |  89%
+
+| What do you think will happen if our vectors are of different length? (Hint: we
+| talked about this in a previous lesson.)
+
+...
+
+  |====================================================================      |  92%
+
+| Vector recycling! Try paste(LETTERS, 1:4, sep = "-"), where LETTERS is a
+| predefined variable in R containing a character vector of all 26 letters in the
+| English alphabet.
+
+> paste(LETTERS, 1:4, sep = "-")
+ [1] "A-1" "B-2" "C-3" "D-4" "E-1" "F-2" "G-3" "H-4" "I-1" "J-2" "K-3" "L-4" "M-1"
+[14] "N-2" "O-3" "P-4" "Q-1" "R-2" "S-3" "T-4" "U-1" "V-2" "W-3" "X-4" "Y-1" "Z-2"
+
+| Excellent job!
+
+  |======================================================================    |  95%
+
+| Since the character vector LETTERS is longer than the numeric vector 1:4, R
+| simply recycles, or repeats, 1:4 until it matches the length of LETTERS.
+
+...
+
+  |========================================================================  |  97%
+
+| Also worth noting is that the numeric vector 1:4 gets 'coerced' into a character
+| vector by the paste() function.
+
+...
+
+  |==========================================================================| 100%
+
+| We'll discuss coercion in another lesson, but all it really means that the
+| numbers 1, 2, 3, and 4 in the output above are no longer numbers to R, but rather
+| characters "1", "2", "3", and "4".
+
+...
+
+| Are you currently enrolled in the Coursera course associated with this lesson?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Would you like me to notify Coursera that you've completed this lesson? If so,
+| I'll need to get some more info from you.
+
+1: Yes
+2: No
+3: Maybe later
+
+Selection: 1
+
+| Is the following information correct?
+
+Course ID: rprog-003
+Submission login (email): vergili@cern.ch
+Submission password: buCkeekh5s
+
+1: Yes, go ahead!
+2: No, I need to change something.
+
+Selection: 1
+
+| I'll try to tell Coursera you've completed this lesson now.
+
+| Great work!
+
+| I've notified Coursera that you have completed rprog-003, Vectors.
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+1: Basic Building Blocks
+2: Sequences of Numbers
+3: Vectors
+4: Missing Values
+5: Subsetting Vectors
+6: Matrices and Data Frames
+
+Selection: 4
+
+  |                                                                          |   0%
+
+| Missing values play an important role in statistics and data analysis. Often,
+| missing values must not be ignored, but rather they should be carefully studied
+| to see if there's an underlying pattern or cause for their missingness.
+
+...
+
+  |====                                                                      |   5%
+
+| In R, NA is used to represent any value that is 'not available' or 'missing' (in
+| the statistical sense). In this lesson, we'll explore missing values further.
+
+...
+
+  |========                                                                  |  11%
+
+| Any operation involving NA generally yields NA as the result. To illustrate,
+| let's create a vector c(44, NA, 5, NA) and assign it to a variable x.
+
+> X<-c(44, NA, 5, NA)
+
+| Give it another try. Or, type info() for more options.
+
+| Assign the vector c(44, NA, 5, NA) to a variable x. The NA must uppercase.
+
+> X <- c(44, NA, 5, NA)
+
+| Almost! Try again. Or, type info() for more options.
+
+| Assign the vector c(44, NA, 5, NA) to a variable x. The NA must uppercase.
+
+> x <- c(44, NA, 5, NA)
+
+| You nailed it! Good job!
+
+  |============                                                              |  16%
+
+| Now, let's multiply x by 3.
+
+> x*3
+[1] 132  NA  15  NA
+
+| You are amazing!
+
+  |================                                                          |  21%
+
+| Notice that the elements of the resulting vector that correspond with the NA
+| values in x are also NA.
+
+...
+
+  |===================                                                       |  26%
+
+| To make things a little more interesting, lets create a vector containing 1000
+| draws from a standard normal distribution with y <- rnorm(1000).
+
+> 
+> y <- rnorm(1000)
+
+| You got it right!
+
+  |=======================                                                   |  32%
+
+| Next, let's create a vector containing 1000 NAs with z <- rep(NA, 1000).
+
+> y
+   [1] -0.9896320381  0.0090439345 -1.2139381718  0.5915515098  1.1451654315
+   [6]  1.8148572206 -0.1555270198  0.5304610989 -1.1884791158  0.9251926120
+  [11]  0.1004820180  0.8258181241  0.9244845013  0.9215997025 -0.5985337009
+  [16]  1.5062746172  0.7037133231  1.3839013050  1.5490119021  1.4338559941
+  [21]  0.6432458059  0.5905909020 -0.3137047734 -0.7249066851 -0.3589891536
+  [26]  1.2060874045 -0.2143848660  1.3853895614  0.0637380764 -0.8734417153
+  [31] -0.7722680984  0.6219649905  1.0962991384 -0.2007657127  1.4265416947
+  [36]  0.7244509647 -0.8049300609  0.3641121846 -0.5445452635 -2.8253990577
+  [41]  1.6131354085 -0.6543005295 -1.2733836352  0.5064462126 -0.9582323972
+  [46]  0.0035194817 -1.1405742872 -0.7428720517 -1.2763564877 -0.1305355522
+  [51]  0.1858945468 -2.8205257778 -1.3031709822 -0.7100706980  1.5741869754
+  [56]  0.3150767144 -1.4688883022 -0.1144782218  0.4820431376 -2.4946606873
+  [61] -0.6846074794 -1.8069307564  0.6878699623  0.0205083163 -0.9714108373
+  [66]  1.1312832949  1.0461564809 -0.4140432673 -1.3623260165 -0.8480739690
+  [71]  0.0280365247  0.7393389322 -0.2101941088 -1.1740578163 -0.0247272967
+  [76] -2.5419717784 -0.1785173274 -1.8528550198  1.1994042085  1.0296750794
+  [81] -0.4397121984 -2.3773393581 -1.0665649723 -0.1039906710  0.3256693465
+  [86] -1.1130350376 -0.0595644662  0.3811050867 -0.1013840967  0.3982181060
+  [91] -0.3484056544  0.4720036101 -0.9250423647  1.5641428995  0.0322118575
+  [96] -0.4547075786  0.7622074869 -0.3685832232  0.3424192578 -0.7123339209
+ [101] -1.5424328102 -1.1446973307  0.7001117133  0.1105468996  2.0597294069
+ [106] -0.6075372399 -0.2904675060 -0.3190087530  0.2990079879  1.0397083160
+ [111]  1.1093477712 -0.7343699094  2.9869352099 -0.3396132437 -1.1419865454
+ [116] -1.1222775462 -0.0587525103  0.2127956362 -0.2908533279  0.0063132557
+ [121]  0.8903003259  0.8193613080  0.1039347420 -2.4528995449 -1.5509979945
+ [126] -0.5462966165  1.8621946723 -0.3746071377  0.0067571377  1.1569271516
+ [131]  0.8479347001 -0.3516822054  1.7457153909  0.1651095521  0.1248152782
+ [136]  1.4584989642 -1.3530281968  0.1134321990  0.0796590550 -0.5151316298
+ [141] -0.2646217791  1.3579129903 -1.1633717729 -2.4193290998  1.9727509119
+ [146]  0.3106053452  0.8873552065 -2.1890785752  1.2149084907  1.1068184591
+ [151]  0.5540083349 -0.1919612899  0.1119933704  1.3036597544  0.1116994143
+ [156] -1.2561066806  0.3866109596  0.5964656927 -0.3432669558 -1.2428130788
+ [161]  0.7519152244  0.7311950453 -0.0742897964 -1.7089338353  0.2254511266
+ [166] -1.2826037695  1.7088456874 -1.3636915836  0.6536229102  0.4034376958
+ [171] -0.4549457067 -0.2192826600  0.2810928993  0.0758264129  0.0740732535
+ [176]  0.5267918309  0.7780317567  0.3236152883 -0.0957270743  1.0441021478
+ [181] -0.1687649052 -0.0018727390 -0.0874009572 -0.1906366465 -1.6049741515
+ [186]  0.8701713626  0.2810712595 -0.1405020753  1.8919931429  0.2283669072
+ [191] -0.9798083078  0.8284679941  0.2825769632 -0.0732585092  1.3215426705
+ [196] -1.3074199562 -1.0519529195 -0.0030861823  0.6928025867  0.8719650679
+ [201]  0.6463270299  0.3536082657  0.2110370867  0.2987637642 -2.2422573814
+ [206]  0.6342588442  1.0810659073  1.2153932531 -2.0492996822  2.8451017086
+ [211] -0.3730622158 -0.7920371275 -3.0173024581  1.0917712873 -0.8063645417
+ [216]  1.8953815289 -0.3264605233 -0.0867136147  0.5842321799  1.5170748564
+ [221]  0.1282692386 -1.2083234854 -1.5488071831  0.3153913454  0.5075745806
+ [226]  0.6302842712  1.3953870135 -1.1039984241 -0.3583095928  0.0261906759
+ [231] -1.9423336911 -1.8475621480  1.9096570600  0.8400467300  0.0229349160
+ [236]  0.6175098194 -0.4081415535 -1.5287509439  0.9716375041  1.5239151380
+ [241] -0.3810471857  2.0815548921 -1.1807347300  2.5137721595  0.6006613922
+ [246]  0.7537048925 -1.7906650397 -2.5759578365 -0.1312935950  0.7410161935
+ [251]  0.2849445799  1.1656358899  0.8846869694  1.1661922222 -0.1870630042
+ [256] -1.7456115501  1.1706272291 -0.6253970253 -0.0885786609 -0.7429676099
+ [261]  0.0629163932  0.3998586211 -1.7990719679 -0.8108327618 -0.0710386911
+ [266] -2.3133418859  0.0991976915 -1.1208590395 -0.7213228483 -1.0977152801
+ [271]  0.5856444811 -1.8144246571 -0.3890601955  1.1542430909  1.7749587458
+ [276]  1.3941768031  0.3226076353 -0.3885701649  0.5258879474  0.8583536371
+ [281] -0.7195007507 -0.1433655603 -0.7809639768 -0.1699979740  0.0028274027
+ [286]  0.8772284955  1.0820747675  0.0502034091 -0.2810117269  1.9169500946
+ [291] -0.3123578962  0.2221848494 -0.1921627235 -0.0965878656 -1.8542745505
+ [296] -1.4012509215 -0.7767737699  0.4469562556  2.4398010871  1.0775154074
+ [301]  1.1054697269 -0.2876697153  0.2677161683  0.0594454920  1.3307122869
+ [306] -0.3934989367  0.1222411702 -0.7300865090  0.3045432113  0.6543323177
+ [311] -0.4582687965  0.9554622707  1.1430527559 -0.2013581313 -1.2186235815
+ [316] -0.2741899273 -0.5236870748 -0.3125445932  1.2881187241  0.1175301368
+ [321]  1.4580113239  0.7603962311 -0.6127956746  1.0023386466  0.0669437770
+ [326]  0.2548337241  1.8072047890 -0.5150511502 -0.2720285157 -1.1476941933
+ [331]  0.3513178313 -1.3729892539 -0.5122475501 -1.3382327177 -1.4210805371
+ [336]  0.6501586555 -0.1365875471  1.0152735571 -0.8603865414 -0.1270554474
+ [341]  0.8991888778  0.3393198363  2.2840563500 -0.9443316543  1.8371916842
+ [346] -1.9444030869 -0.3383999513  0.6208745826 -1.2166555224  0.2499387296
+ [351]  0.7479530185  0.3273156622  1.3410078825 -1.6064086386 -0.5623147552
+ [356]  1.0506901978 -0.3411752477 -0.5230303966 -2.7283690888 -0.4492840793
+ [361]  0.3652865750 -0.5266738876 -0.9663776363  0.5750345023 -1.2235197895
+ [366]  0.9765729255  0.7968636357  1.4258742544  0.0599619066 -0.4538952430
+ [371] -1.7312256145  0.5256823684  0.3197105660  2.2131451388 -0.0133632737
+ [376]  0.6358745488  0.3440560661 -0.6889174991 -0.4843289017  0.9852445388
+ [381]  0.7048167034  0.8158273196 -1.6873186821  0.9327280794 -0.7457061219
+ [386] -1.3296786400  0.5725219776 -0.3509276704  1.9826649875 -0.2230925118
+ [391]  0.3601494935 -0.1483938275  0.5353892751  1.4189835598  3.0073365192
+ [396] -1.5976349390  0.8631066064  0.5791865011  0.3566382050  0.9815987356
+ [401]  0.3867702498 -0.8481370295 -0.7165637475  0.3964865926 -0.5521161364
+ [406] -2.8579304864  0.1612795043  0.2059505683 -1.0133284067 -0.8007971736
+ [411]  1.6690087657 -0.2159279336 -0.2904156683 -0.3689965513 -0.6731221334
+ [416] -1.0352112405  1.7188960344 -0.9969348095 -0.8192597768  0.4585158701
+ [421]  0.4542558711 -0.6902185126  0.4751616522  0.7887119896  0.9851725630
+ [426]  0.6587543630  0.4364216950  0.4788278659 -2.1394537377 -0.1561125939
+ [431]  2.3892481826 -2.5731023054  0.5293196957  0.0253241755  0.3604483857
+ [436] -0.6908502873 -1.2705993943  0.3127796522  0.2509651735  1.5621284718
+ [441] -1.1856862170  0.2960052643  0.0065834339  2.0800711641 -1.5854249305
+ [446]  0.1967198464  1.2150950063 -0.4434247132 -1.0195031264  1.1326068386
+ [451]  0.8752183930 -1.3162874538 -0.2810764598 -0.5917238559  0.1686471197
+ [456] -0.3124666791 -2.3304951460  0.3098419342  0.5433196991 -0.3766572433
+ [461] -1.5886284809 -0.8049734642  0.1117857945 -0.5370339109  0.8089916072
+ [466] -1.0389974816  1.1157677178  2.0211751492 -0.0267290029  0.0899526327
+ [471] -0.2158516583 -0.4657316294 -0.7757306372  0.1973674294 -0.2524869467
+ [476]  2.4208118791  0.1119191443 -0.8345685441  1.0121992688 -0.1860389427
+ [481] -0.6206619525  0.0066988121 -1.5780208400 -1.0599559636  2.3090057220
+ [486]  0.1095601455  0.6054405875  0.6097883625 -0.1849266958  0.6684862679
+ [491]  0.3889992603  0.8014949920  0.6926237203 -0.9694665603 -1.0655733680
+ [496] -0.3288266894  0.1645945145 -0.1446641789  0.5085002314 -1.0576891076
+ [501] -0.7529598051  0.6450395184  0.3901797076  0.7868319198  1.1359912485
+ [506] -0.6619017893 -0.3019220064 -1.6482501588  1.0244331672 -0.1392783257
+ [511] -1.8987029606  0.0680974146 -0.7062630452 -0.6514197756  1.1469269589
+ [516] -0.3164800423  2.0195347959  0.4864054325 -1.5086059794  0.8637727584
+ [521]  0.0862305481  0.1179953666  0.9003525637  0.3649618615  0.2115981682
+ [526] -0.7117457094  0.1782711433  0.1620016211 -1.2633371849  1.0199882864
+ [531]  2.0106001447  0.6151026961 -0.8468513319  0.6110804221 -1.2669818785
+ [536] -0.1292529265  0.9722185342  1.5007817190  0.4869195943  0.0001242146
+ [541] -1.1134318266  0.2941247561 -1.0001426364  0.8289646905 -1.5855183001
+ [546] -0.7877964194 -1.3625963053 -0.6750818898  0.0851019400  0.0698088996
+ [551] -0.4261957654 -0.4353572003  0.2942631985  0.2399959974 -1.6895270596
+ [556] -1.0517731951 -0.2582480701 -0.7175633088 -1.6573672563  0.2414268762
+ [561] -0.2513571820  1.7631080024 -0.4196734236  1.2407491160 -0.1432056493
+ [566]  0.0631249100 -0.3918275219  0.7081988457 -0.9324696911 -2.1756047963
+ [571] -0.9401224078  1.8163857334  0.2514934913 -0.4998902029  0.1820493947
+ [576]  0.5183416434 -0.8413529238 -0.3976979950  1.2345417480  0.0738758116
+ [581] -0.9196563634  0.1881750174 -0.2964593469 -0.4495100462 -1.7634003260
+ [586] -0.6431120131 -0.0017857668  0.0420226870  0.4700614180  1.9034686266
+ [591]  0.8798834863  1.3600842039  0.9432311987  0.3916829043  0.1861691041
+ [596] -0.7045363356 -0.4490215479 -0.9869039630 -0.5028907506 -1.6777436951
+ [601]  1.9203408272  0.6351683475  0.7165891269 -0.3309389536 -0.6124796115
+ [606]  0.5172285009  0.4181647718 -1.3158314465 -0.0925420706 -0.8979811359
+ [611]  0.1371367916 -1.0724723297  0.7386425856  1.1019867594 -0.5179620643
+ [616] -0.4381127905  0.5296901631 -0.0078359833 -1.4006059871 -0.3701977521
+ [621]  1.0974788590 -0.2682091270  0.4679648146  0.9425700993 -1.8698522274
+ [626]  0.0136029211  1.3043318004 -0.6256917543  1.2485375378 -0.8114636240
+ [631]  0.8873636071  0.6762309033 -0.4513010775  0.5252515936  0.6064498592
+ [636]  0.0124098712 -1.0215056690 -0.3963291912 -0.8102740514 -0.9629153695
+ [641] -1.0836731990 -0.0380372280  1.8836809928  0.9122923809 -0.0555320695
+ [646]  1.3942182427 -0.7221690678 -0.1799300383 -0.4302996585  0.6212433033
+ [651]  0.1103546227 -0.2095133387 -1.0863941981 -0.1857407200  0.6101612443
+ [656] -0.1113226459  0.8914798064  0.3727837538 -0.1176185716  1.0917260918
+ [661]  0.2470257976 -0.1887843741 -0.2897047375  0.0870696716 -1.1043809572
+ [666] -1.3786471451  0.2583409269 -0.4921901253 -1.8478824865 -0.8974905559
+ [671] -0.8889358567  0.5434737052  2.1389408335  0.5843249779  0.9801146576
+ [676] -1.2000700573 -0.4009782116 -1.8364439018 -0.4461557602  0.2531683286
+ [681] -1.5234537345  0.3504691941  0.1068769343 -1.1938914527  0.6083904006
+ [686]  0.3477387483  0.0108451073 -0.8532364546  1.2590350528  0.4911510429
+ [691] -0.0912053260 -2.3230022228 -0.6156378097  0.3011037134  0.2808726103
+ [696]  1.3384622748 -0.8141839754  2.4067011394  0.1968886891 -0.5722462581
+ [701] -0.3815277928 -1.0775046510  2.0580094127  0.4321636007 -1.7254783686
+ [706]  1.0042250187 -1.3584402527 -0.7060650773 -0.2388448437 -0.2496774189
+ [711]  1.7423795288 -0.7177738378  0.8263394032 -0.0231166570 -0.5855640399
+ [716]  0.6446530006  0.6917631798 -1.6121931594 -1.1661216597  1.0523919929
+ [721] -0.1944909858 -1.2262233832 -0.5817182202  0.3900247728  0.5645664872
+ [726]  0.1185131343  2.7353560571  0.1521759600 -0.4559311642 -1.2961401850
+ [731]  1.6168783266 -0.0114948154  0.8331059855  0.0418292179 -1.6854760697
+ [736] -1.0358340567  0.0681770962  0.1099054547  0.4640390933  0.9617336872
+ [741]  2.0401081257 -0.0342366186 -0.0399059849 -0.3142618804 -0.3729241129
+ [746] -0.6369001942  0.0773859368  2.0345180577  1.7531454293  0.1666497046
+ [751]  0.3465866465  0.1790652606  0.7298226038 -1.0293081362  1.1594245919
+ [756] -1.0535903464  0.2290246929  0.8265086005  0.5299411155 -0.4401384590
+ [761] -1.8057033525  0.3766825694 -0.8312572486  0.2829977144  0.9247149600
+ [766] -1.8126634082 -1.6666404632 -0.4367579458  2.1757749605 -1.3654520056
+ [771]  1.1457436382  0.2539693395  1.0919771960 -0.3148890624  0.0107927322
+ [776]  0.1166588785  0.8852610470  1.4442132338  0.4101185419  0.4937544727
+ [781]  0.0677108620 -0.6026283926  1.4457700880 -0.2274831296 -0.0292963915
+ [786] -0.1867647708  0.0814023855 -0.5191146041 -0.9905543532 -0.0221442332
+ [791]  0.1406179217 -1.3388588228 -0.8708627665  0.2160493694  0.0127656154
+ [796]  0.2148607158  1.7076154923 -0.5285043562  0.7949731117 -0.6945037348
+ [801]  0.9738369341  0.9081259085  0.3241442259 -1.6301305065  0.0065202489
+ [806] -0.3828845763 -2.0574722670  1.1483780688 -0.5981863580 -2.0900928712
+ [811]  0.6067778358 -0.2473866378  0.3289345521 -0.7081745876  0.9842782464
+ [816] -1.1394031315 -1.1715601968 -0.6861834245 -1.5566852390  1.3109589015
+ [821] -0.1317404250  0.6454548568  1.1037234694  0.4211992711 -1.7618223664
+ [826] -0.2775366369 -0.0160889417 -0.1752300911  0.0816609493 -0.7780549604
+ [831]  0.7326532125 -0.1017131652  0.3137366017  0.2963998613 -1.9475300808
+ [836] -0.8060746486  0.4793067381 -0.3245920515  1.9140388392  1.3430405723
+ [841] -0.5321747102 -0.2372252073 -0.3678828874 -2.5455952671  1.5429157709
+ [846]  0.2573659640  0.7921435020  1.5180242406  0.7433795153 -1.5785957380
+ [851]  1.5382605089  1.5524733878  1.4842077646 -0.5921316659  1.5507219808
+ [856]  0.6804732712  0.4539411020 -0.0918273752  0.9409048457 -0.7346200168
+ [861] -0.3694438408  0.8877213120  0.5092832029  0.8593919800  0.2493495522
+ [866] -0.7763879912  0.5626137660 -0.0959360049  0.1486165574  0.4247395712
+ [871]  0.7322059418 -2.2523273317 -1.1673164208  1.0074458396  0.6208636552
+ [876]  1.1816424645  0.4424391870  0.2828966334 -0.8532263949 -1.3963900476
+ [881]  2.1683697708 -1.6576088907 -0.4851948385 -0.2390987652 -0.7263601270
+ [886]  0.9249083432 -0.7492069523 -0.0770962187 -1.4868789777 -0.0684378668
+ [891] -0.9918706033  0.0568959897  0.7221732843 -1.0871376696 -1.0943423425
+ [896]  0.3178101907  0.6167032910 -0.2470583890 -1.2428655853  0.3729574718
+ [901] -0.4906234455 -0.0730710299  1.4107814278  0.0104833854  0.9390486013
+ [906] -1.2942954948  0.0754178568 -1.4347919594  2.0099283328 -2.1667322952
+ [911]  0.0215199054  1.7939141402 -0.0434656209 -0.6812677739 -1.1665205525
+ [916]  0.5706046928 -0.2434592963  2.5216512463 -0.5999523297 -0.2755397127
+ [921]  0.9823378310  1.2219137622  0.4035427819  1.0954585000 -0.1703982682
+ [926]  0.4281300055  0.0005146774  1.1324746602 -0.3201190848 -1.0779519226
+ [931] -2.6173978240 -0.9276970669 -1.3826193815 -0.6221032380 -0.1455716696
+ [936]  0.0559831563  1.4023765869 -0.8381608508 -0.6728382113  0.0331689472
+ [941] -1.6612053671 -0.9036551487  0.7210019209 -0.5669645414 -0.5164720707
+ [946]  1.9061383154  1.4665518163 -2.2079785835  1.5690794154 -1.3984894135
+ [951] -1.3510389220 -0.9573511857  1.3760424651 -0.9888734689 -2.5140427436
+ [956]  0.5710778994  1.7402660416  0.3431371013 -0.1154984702  0.7723503617
+ [961] -0.2977786412 -1.3356984922  0.5233792603  0.7533290828 -1.6903567503
+ [966] -0.3036521380 -0.2035877647  1.5457223934  0.4997436073 -0.1845857120
+ [971]  0.4103741870  0.6816514880 -0.8854257702  2.1650868733 -0.1298921730
+ [976] -0.3081695661 -0.1207289726  0.3375995510 -1.1617631073 -0.3186535493
+ [981] -0.6760040707 -1.4857226724  0.5027688609  0.4783793378  1.5143329987
+ [986] -0.0404923165  0.0199362062 -1.5806271693 -0.8480067225  0.9467368496
+ [991]  0.4720186695 -1.4404855718 -0.8216223752 -1.2684645811 -0.3124742155
+ [996] -2.5542105495  0.4004651287  1.0859451435  0.7684494521 -0.6175239202
+
+| You almost had it, but not quite. Try again. Or, type info() for more options.
+
+| Type z <- rep(NA, 1000) to generate a vector of 1000 NAs.
+
+> z <- rep(NA, 1000)
+
+| You're the best!
+
+  |===========================                                               |  37%
+
+| Finally, let's select 100 elements at random from these 2000 values (combining y
+| and z) such that we don't know how many NAs we'll wind up with or what positions
+| they'll occupy in our final vector -- myData <- sample(c(y, z), 100).
+
+> myData <- sample(c(y, z), 100)
+
+| You are doing so well!
+
+  |===============================                                           |  42%
+
+| Let's first ask the question of where our NAs are located in our data. The
+| is.na() function tells us whether each element of a vector is NA. Call is.na() on
+| myData and assign the result to myNA.
+
+> myNA <- is.na(myData)
+
+| You nailed it! Good job!
+
+  |===================================                                       |  47%
+
+| Now, print myNA to see what you came up with.
+
+> myNA
+  [1] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE
+ [14] FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE
+ [27] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+ [40] FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+ [53] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE
+ [66]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+ [79] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+ [92]  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE
+
+| Excellent job!
+
+  |=======================================                                   |  53%
+
+| Everywhere you see a TRUE, you know the corresponding element of myData is NA.
+| Likewise, everywhere you see a FALSE, you know the corresponding element of
+| myData is one of our random draws from the standard normal distribution.
+
+...
+
+  |===========================================                               |  58%
+
+| In our previous discussion of logical operators, we introduced the `==` operator
+| as a method of testing for equality between two objects. So, you might think the
+| expression myData == NA yields the same results as is.na(). Give it a try.
+
+> myData == NA
+  [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [27] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [53] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+ [79] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+
+| You got it right!
+
+  |===============================================                           |  63%
+
+| The reason you got a vector of all NAs is that NA is not really a value, but just
+| a placeholder for a quantity that is not available. Therefore the logical
+| expression is incomplete and R has no choice but to return a vector of the same
+| length as myData that contains all NAs.
+
+...
+
+  |===================================================                       |  68%
+
+| Don't worry if that's a little confusing. The key takeaway is to be cautious when
+| using logical expressions anytime NAs might creep in, since a single NA value can
+| derail the entire thing.
+
+...
+
+  |=======================================================                   |  74%
+
+| So, back to the task at hand. Now that we have a vector, myNA, that has a TRUE
+| for every NA and FALSE for every numeric value, we can compute the total number
+| of NAs in our data.
+
+...
+
+  |==========================================================                |  79%
+
+| The trick is to recognize that underneath the surface, R represents TRUE as the
+| number 1 and FALSE as the number 0. Therefore, if we take the sum of a bunch of
+| TRUEs and FALSEs, we get the total number of TRUEs.
+
+...
+
+  |==============================================================            |  84%
+
+| Let's give that a try here. Call the sum() function on myNA to count the total
+| number of TRUEs in myNA, and thus the total number of NAs in myData. Don't assign
+| the result to a new variable.
+
+> sum(myNA)
+[1] 44
+
+| Excellent job!
+
+  |==================================================================        |  89%
+
+| Pretty cool, huh? Finally, let's take a look at the data to convince ourselves
+| that everything 'adds up'. Print myData to the console.
+
+> myData
+  [1] -0.787796419 -0.526673888           NA  1.410781428           NA -0.373062216
+  [7]           NA           NA  1.091726092           NA           NA  0.068177096
+ [13]           NA  0.681651488  0.676230903 -0.308169566           NA           NA
+ [19] -0.686183425           NA -1.612193159           NA -2.575957837 -0.296459347
+ [25]           NA  1.248537538  0.019936206  1.343040572           NA           NA
+ [31]           NA           NA           NA -1.083673199  1.708845687  0.828964690
+ [37]           NA           NA           NA  0.376682569 -1.185686217           NA
+ [43]           NA  0.908125909 -2.419329100 -0.676004071           NA  1.376042465
+ [49]  1.837191684           NA           NA           NA -1.805703352 -0.184926696
+ [55]  0.109905455  0.294263198 -0.115498470 -0.381527793           NA  1.310958901
+ [61] -0.186764771           NA -0.376657243  0.390179708           NA           NA
+ [67] -1.400605987           NA           NA -1.193891453           NA -0.962915369
+ [73]           NA           NA           NA           NA           NA  1.774958746
+ [79]  1.433855994  0.055983156  1.105469727 -1.094342343 -0.717563309           NA
+ [85]           NA  0.006698812  0.724450965  2.058009413 -0.449510046 -0.351682205
+ [91] -2.825399058           NA           NA  0.063124910           NA -0.264621779
+ [97]  0.984278246  0.491151043           NA -0.120728973
+
+| Great job!
+
+  |======================================================================    |  95%
+
+| Now that we've got NAs down pat, let's look at a second type of missing value --
+| NaN, which stands for 'not a number'. To generate NaN, try dividing (using a
+| forward slash) 0 by 0 now.
+
+> 
+> a
+Error: object 'a' not found
+> 0/0
+[1] NaN
+
+| You are amazing!
+
+  |==========================================================================| 100%
+
+| Let's do one more, just for fun. In R, Inf stands for infinity. What happens if
+| you subtract Inf from Inf?
+
+> Inf/Inf
+[1] NaN
+
+| Nice try, but that's not exactly what I was hoping for. Try again. Or, type
+| info() for more options.
+
+| Type Inf - Inf. Can you guess the result?
+
+> Inf-Inf
+[1] NaN
+
+| You got it right!
+
+| Are you currently enrolled in the Coursera course associated with this lesson?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Would you like me to notify Coursera that you've completed this lesson? If so,
+| I'll need to get some more info from you.
+
+1: Yes
+2: No
+3: Maybe later
+
+Selection: 1
+
+| Is the following information correct?
+
+Course ID: rprog-003
+Submission login (email): vergili@cern.ch
+Submission password: buCkeekh5s
+
+1: Yes, go ahead!
+2: No, I need to change something.
+
+Selection: 1
+
+| I'll try to tell Coursera you've completed this lesson now.
+
+| Great work!
+
+| I've notified Coursera that you have completed rprog-003, Missing_Values.
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 2
+
+| OK. I'm opening the swirl courses web page in your browser.
+
+| Leaving swirl now. Type swirl() to resume.
+
+> 
+> 
+> 
