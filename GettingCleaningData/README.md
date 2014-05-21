@@ -13,7 +13,7 @@ Note: Do not forget to set working directory to your data location like below
 setwd("D:/work/coursera/UCI HAR Dataset")
 
 
-running scripts
+#Running scripts
 - Get this  repository 
 - Download the dataset and extract. The name of dataset folder is UCI HAR Dataset. "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 - Set working directory to   UCI HAR Dataset folder. like below
