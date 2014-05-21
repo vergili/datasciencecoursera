@@ -14,9 +14,9 @@ setwd("D:/work/coursera/UCI HAR Dataset")
 
 
 running scripts
-##Get this  repository 
-##Download the dataset and extract. The name of dataset folder is UCI HAR Dataset. "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-##Set working directory to   UCI HAR Dataset folder. like below
-##setwd("D:/work/coursera/UCI HAR Dataset")
-##Run script <path to>/run_analysis.R
-##The tidy dataset will be created  in working directory (UCI HAR Dataset) tidyData.txt
+- Get this  repository 
+- Download the dataset and extract. The name of dataset folder is UCI HAR Dataset. "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+- Set working directory to   UCI HAR Dataset folder. like below
+- setwd("D:/work/coursera/UCI HAR Dataset")
+- Run script <path to>/run_analysis.R
+- The tidy dataset will be created  in working directory (UCI HAR Dataset) tidyData.txt
