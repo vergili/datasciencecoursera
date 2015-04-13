@@ -1,4 +1,4 @@
-Practical Machine Learning 
+Human Activity Recognition - Practical Machine Learning 
 ==========================================================
 
 Introduction
